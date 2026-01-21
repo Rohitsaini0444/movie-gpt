@@ -1,12 +1,26 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Header from './Header'
+import validate from '../utils/validate';
 
 const Login = () => {
     const [isSignedIn, setIsSignedIn] = useState(true);
+    const [errorMsg, setErrorMsg] = useState('');
+    const fullNameRef = useRef(null);
+    const emailRef = useRef(null);
+    const passwordRef = useRef(null);
 
     const toggleSignIn = () => {
-        console.log('clicked' + isSignedIn);
         setIsSignedIn(!isSignedIn);
+    }
+
+    const handleSubmit = () => {
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
+        const fullName = fullNameRef.current ? fullNameRef.current.value : null;
+        const validationError = validate(fullName, email, password);
+        setErrorMsg(validationError);
+        if (validationError) return;
+        // Proceed with sign-in or sign-up logic
     }
 
     return (
@@ -19,10 +33,11 @@ const Login = () => {
 
                 <form className='flex flex-col gap-4 w-1/4 mx-auto mt-10 p-10 bg-black/90 rounded'>
                     <span className='text-white text-3xl font-bold'>{isSignedIn ? "Sign In" : "Sign Up"}</span>
-                    {!isSignedIn && <input type='text' placeholder='Full Name' className='h-10 px-4 py-2 bg-gray-800 text-white rounded' />}
-                    <input type='text' placeholder='Email' className='h-10 px-4 py-2 bg-gray-800 text-white rounded' />
-                    <input type='password' placeholder='Password' className='h-10 px-4 py-2 bg-gray-800 text-white rounded' />
-                    <button type='button' className='h-10 px-4 py-2 bg-red-600 text-white rounded'>{isSignedIn ? "Sign In" : "Sign Up"}</button>
+                    {!isSignedIn && <input ref={fullNameRef} type='text' placeholder='Full Name' className='h-10 px-4 py-2 bg-gray-800 text-white rounded' />}
+                    <input ref={emailRef} type='text' placeholder='Email' className='h-10 px-4 py-2 bg-gray-800 text-white rounded' />
+                    <input ref={passwordRef} type='password' placeholder='Password' className='h-10 px-4 py-2 bg-gray-800 text-white rounded' />
+                    <p className='text-red-600'>{errorMsg}</p>
+                    <button type='button' onClick={handleSubmit} className='h-10 px-4 py-2 bg-red-600 text-white rounded'>{isSignedIn ? "Sign In" : "Sign Up"}</button>
                     <p className='text-white'>{isSignedIn ? "New to Netflix?" : "Already have an account?"} <button type='button' onClick={() => toggleSignIn()} className='text-white underline'>{isSignedIn ? "Sign Up" : "Sign In"}</button></p>
                 </form>
             </div>

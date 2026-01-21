@@ -1,6 +1,11 @@
 # Movie-GPT
 - Created creat-react-app
 - Configured tailwindCss
+- Header
+- Routing of app
+- Login form
+- Sign up form
+- Form validations
 
 
 
