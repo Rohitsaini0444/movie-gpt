@@ -1,11 +1,14 @@
+import { Provider } from 'react-redux';
 import './App.css';
 import Body from './components/Body';
+import appStore from './utils/appStore';
 
 function App() {
   return (
-    <div className="flex font-bold">
-     <Body />
+    <Provider store={appStore}><div className="flex font-bold">
+      <Body />
     </div>
+    </Provider>
   );
 }
 
