@@ -11,6 +11,10 @@
 - Deploying app to production
 - Create SignUp user account
 - Create SignIn User
+- Created SignOut feature
+- Update user profile on firebase and update redux store
+- Redirect to login if user not logged in and redirect to browse if user is logged In
+
 
 
 
