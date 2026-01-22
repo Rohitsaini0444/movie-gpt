@@ -14,6 +14,8 @@
 - Created SignOut feature
 - Update user profile on firebase and update redux store
 - Redirect to login if user not logged in and redirect to browse if user is logged In
+- Unsubscribe event listeners when component unmount
+- Use constants
 
 
 
