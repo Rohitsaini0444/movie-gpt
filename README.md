@@ -6,6 +6,11 @@
 - Login form
 - Sign up form
 - Form validations
+- useRef hook
+- Firebase Setup
+- Deploying app to production
+- Create SignUp user account
+- Create SignIn User
 
 
 
