@@ -3,7 +3,6 @@ import Header from './Header'
 import validate from '../utils/validate';
 import { auth } from '../utils/firebase';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
 
@@ -13,7 +12,6 @@ const Login = () => {
     const fullNameRef = useRef(null);
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
-    const navigate = useNavigate();
     const dispath = useDispatch();
 
     const toggleSignIn = () => {
@@ -33,7 +31,6 @@ const Login = () => {
             signInWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
                     const user = userCredential.user;
-                    navigate("/browse")
                     console.log('User signed in:', user);
                 })
                 .catch((error) => {
@@ -41,7 +38,6 @@ const Login = () => {
                     const errorMessage = error.message;
                     setErrorMsg(errorCode + "-" + errorMessage);
                 });
-            console.log('Signing in with', { email, password });
         } else {
             // Sign-up logic here
             createUserWithEmailAndPassword(auth, email, password)
@@ -52,7 +48,6 @@ const Login = () => {
                     }).then(() => {
                         const { uid, displayName, email, photoURL } = auth.currentUser;
                         dispath(addUser({ uid, displayName, email, photoURL }))
-                        navigate("/browse")
                     }).catch((error) => {
                         setErrorMsg(error?.message)
                     });
