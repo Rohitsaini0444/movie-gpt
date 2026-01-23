@@ -31,8 +31,6 @@ const Login = () => {
             // Sign-in logic here
             signInWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
-                    const user = userCredential.user;
-                    console.log('User signed in:', user);
                 })
                 .catch((error) => {
                     const errorCode = error.code;

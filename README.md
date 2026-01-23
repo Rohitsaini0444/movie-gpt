@@ -16,6 +16,16 @@
 - Redirect to login if user not logged in and redirect to browse if user is logged In
 - Unsubscribe event listeners when component unmount
 - Use constants
+- Registered on TMDB api & created account & get access token
+- Get data from Tmdb now playing movies list
+- Custom hook for now playing movies
+- Create movie slice
+- Update store with movies data 
+- Planing for mainContainer and secondryConatiner
+- Fetch data for trailer video
+- Update store with trailer video data
+- Embeded youtube video and made it autoplay and mute 
+- Tailwind classes to look mainContainer awesome
 
 
 

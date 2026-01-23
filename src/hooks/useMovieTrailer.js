@@ -12,7 +12,6 @@ const useTrailerVideos = (movieId) => {
        const videos = data?.results;
        const filteredVideos = videos?.filter((video) => video?.type === 'Trailer')
        const movieVideos = filteredVideos ? filteredVideos[0] : videos[0];
-       console.log(movieVideos);
        dispatch(addTrailerVideo(movieVideos));
      }
    
