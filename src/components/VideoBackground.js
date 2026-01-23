@@ -1,24 +1,9 @@
-import React, { useEffect } from 'react'
-import { MOVIE_LIST_API_OPTIONS } from '../utils/constants'
-import { useDispatch, useSelector } from 'react-redux'
-import { addTrailerVideo } from '../utils/movieSlice'
+import { useSelector } from 'react-redux'
+import useTrailerVideos from '../hooks/useMovieTrailer'
 
 const VideoBackground = ({ movieId }) => {
-  const dispatch = useDispatch();
+  useTrailerVideos(movieId)
   const trailerVideo = useSelector((store) => store?.movies?.trailerVideo)
-  const getMovieVideos = async () => {
-    const res = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`, MOVIE_LIST_API_OPTIONS);
-    const data = await res.json();
-    const videos = data?.results;
-    const filteredVideos = videos?.filter((video) => video?.type === 'Trailer')
-    const movieVideos = filteredVideos ? filteredVideos[0] : videos[0];
-    console.log(trailerVideo);
-    dispatch(addTrailerVideo(movieVideos));
-  }
-
-  useEffect(() => {
-    getMovieVideos()
-  }, [])
 
   return (
     <div>
@@ -28,7 +13,7 @@ const VideoBackground = ({ movieId }) => {
         src={`https://www.youtube.com/embed/${trailerVideo?.key}`}
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        ></iframe>
+      ></iframe>
     </div>
   )
 }
