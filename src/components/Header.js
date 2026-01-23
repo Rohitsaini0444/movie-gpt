@@ -33,7 +33,7 @@ const Header = () => {
         })
     }
     return (
-        <div className='flex absolute justify-between w-screen px-8 py-2 bg-gradient-to-b from-black z-10'>
+        <div className='flex sticky top-1 justify-between w-screen px-8 py-2 bg-gradient-to-b from-black z-10'>
             <img className='w-36' src={APP_LOGO} alt='app-logo'></img>
             {user?.uid && <div className='flex h-full p-2 text-center align-middle justify-center'>
                 <img className='w-7 h-7' src={user?.photoURL} alt='signOut' />
