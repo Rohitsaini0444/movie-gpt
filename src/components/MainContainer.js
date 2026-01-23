@@ -1,5 +1,5 @@
 import React from 'react'
-import VideoPlaying from './VideoPlaying'
+import VideoBackground from './VideoBackground'
 import VideoTitle from './VideoTitle'
 import { useSelector } from 'react-redux'
 
@@ -8,11 +8,12 @@ export const MainContainer = () => {
     if(!movies) 
         return null;
     const mainMovie = movies[0];
+    console.log("mainMovie",mainMovie);
   return (
     <div>
         mainContainer
-        <VideoPlaying />
         <VideoTitle />
+        <VideoBackground />
     </div>
   )
 }
