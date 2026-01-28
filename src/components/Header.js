@@ -3,6 +3,7 @@ import { signOut, onAuthStateChanged } from "firebase/auth"
 import { auth } from "../utils/firebase"
 import { useDispatch, useSelector } from 'react-redux'
 import { addUser, removeUser } from '../utils/userSlice'
+import { toggleGPTSearch } from '../utils/gptSearchSlice'
 import { useNavigate } from 'react-router-dom'
 import { APP_LOGO } from '../utils/constants'
 
@@ -10,6 +11,7 @@ const Header = () => {
     const dispath = useDispatch();
     const navigate = useNavigate()
     const user = useSelector((store) => store.user)
+    const gptSearchEnabled = useSelector((store) => store?.gptSearch?.gptSearchEnabled)
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -32,10 +34,16 @@ const Header = () => {
             navigate('/error');
         })
     }
+
+    const handleGPTSearch = () => {
+        dispath(toggleGPTSearch());
+    }
+    
     return (
         <div className='flex sticky top-0 justify-between w-screen px-8 py-2 bg-gradient-to-b bg-black from-black z-20'>
             <img className='w-36' src={APP_LOGO} alt='app-logo'></img>
             {user?.uid && <div className='flex h-full p-2 text-center align-middle justify-center'>
+                 {!gptSearchEnabled && <button onClick={handleGPTSearch} className=' mr-2 px-2 bg-green-600 rounded font-bold text-white'>GPT Search</button>}
                 <img className='w-7 h-7' src={user?.photoURL} alt='signOut' />
                 <button onClick={handleSignOut} className='px-2 font-bold text-white'>SignOut</button>
             </div>}
