@@ -26,6 +26,15 @@
 - Update store with trailer video data
 - Embeded youtube video and made it autoplay and mute 
 - Tailwind classes to look mainContainer awesome
+- Create components to show movies list
+   - mainContainer
+    - videoPlaying
+    - videoTitle
+   - secondryContainer
+    - movies * n
+    - movie cards * n
+
+
 
 
 
