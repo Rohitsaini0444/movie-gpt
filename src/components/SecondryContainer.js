@@ -10,11 +10,13 @@ const SecondryContainer = () => {
   const upcomingMovies = useSelector((store) => store?.movies?.upcomingMovies);
 
   return (
-    <div className='w-screen bg-transparent -mt-5'>
+    <div className='w-screen  p-4  bg-black z-10'>
+      <div className='flex flex-col bg-transparent z-20 -mt-[300px]'>
       <MoviesList title={'Now Playing Movies'} moviesList={nowPlayingMovies} />
       <MoviesList title={'Top Rated Movies'} moviesList={topRatedMovies} />
       <MoviesList title={'Popular Movies'} moviesList={popularMovies} />
       <MoviesList title={'Upcoming Movies'} moviesList={upcomingMovies} />
+      </div>
     </div>
   )
 }
