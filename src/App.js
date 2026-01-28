@@ -5,7 +5,7 @@ import appStore from './utils/appStore';
 
 function App() {
   return (
-    <Provider store={appStore}><div className="flex font-bold">
+    <Provider store={appStore}><div className="flex font-bold overflow-x-hidden">
       <Body />
     </div>
     </Provider>
