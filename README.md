@@ -33,6 +33,10 @@
    - secondryContainer
     - movies * n
     - movie cards * n
+- use custom hooks for popular, top rated and upcoming movies
+- GPT search page
+- GPT search bar
+- multi language page
 
 
 

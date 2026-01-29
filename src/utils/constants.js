@@ -8,3 +8,14 @@ export const MOVIE_LIST_API_OPTIONS = {
         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1Y2FiNGJmOTc3ZWYyZjI4YWFjY2JkNDhiMjY4YjIyNSIsIm5iZiI6MTc2OTE1NjAzNS4zMDIsInN1YiI6IjY5NzMyZGMzOTJiYWIyNjFhN2UzZDZlOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6JAOupdjGwMfpy35FSzHTOvnY2Mj0sKVxg-FkqWn5sY'
     }
 };
+export const LANGUAGE_CONSTANTS = {
+    EN: 'en',
+    ES: 'es',
+    HIN: 'hindi'
+};
+
+export const LANGUAGE_OPTIONS = [
+    { identifier: LANGUAGE_CONSTANTS.EN, label: 'English' },
+    { identifier: LANGUAGE_CONSTANTS.ES, label: 'Spanish' },
+    { identifier: LANGUAGE_CONSTANTS.HIN, label: 'Hindi' }
+];
