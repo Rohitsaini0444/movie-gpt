@@ -5,7 +5,7 @@ import { BROWSE_BACKGROUND_IMAGE_URL } from '../utils/constants'
 
 const GptSearch = () => {
     return (
-        <div className='w-full'>
+        <div className='w-screen justify-center'>
             <div className='absolute -z-10'>
                 <img src={BROWSE_BACKGROUND_IMAGE_URL} alt='background-img' ></img>
             </div>

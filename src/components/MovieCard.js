@@ -7,7 +7,7 @@ const MovieCard = ({ movieData }) => {
                     hover:scale-110 hover:z-10 cursor-pointer">
 
       <img
-        className="w-full h-full object-cover"
+        className="w-full h-full object-cover text-white"
         src={`https://image.tmdb.org/t/p/w300${movieData?.poster_path}`}
         alt={movieData?.title || "Movie Poster"}
       />

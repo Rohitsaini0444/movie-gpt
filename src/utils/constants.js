@@ -14,8 +14,11 @@ export const LANGUAGE_CONSTANTS = {
     HIN: 'hindi'
 };
 
+export const DEFAULT_MOVIES_LIST = ['Don', 'Hum appke hain kaun', '3 Idiots', 'Hera Pheri', 'welcome'];
 export const LANGUAGE_OPTIONS = [
     { identifier: LANGUAGE_CONSTANTS.EN, label: 'English' },
     { identifier: LANGUAGE_CONSTANTS.ES, label: 'Spanish' },
     { identifier: LANGUAGE_CONSTANTS.HIN, label: 'Hindi' }
 ];
+
+export const GPT_API_KEY = process.env.REACT_APP_OPENAI_KEY;
