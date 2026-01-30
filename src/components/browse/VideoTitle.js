@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { lang } from '../utils/languageConstants';
+import { lang } from '../../utils/configs/languageConstants';
 
 const VideoTitle = ({ title, overview }) => {
     const language = useSelector((store) => store?.config?.language);

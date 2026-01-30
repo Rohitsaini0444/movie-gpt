@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
 import { signOut, onAuthStateChanged } from "firebase/auth"
-import { auth } from "../utils/firebase"
+import { auth } from "../../utils/configs/firebase"
 import { useDispatch, useSelector } from 'react-redux'
-import { addUser, removeUser } from '../utils/userSlice'
-import { toggleGPTSearch } from '../utils/gptSearchSlice'
+import { addUser, removeUser } from '../../utils/store/userSlice'
+import { toggleGPTSearch } from '../../utils/store/gptSearchSlice'
 import { useNavigate } from 'react-router-dom'
-import { APP_LOGO } from '../utils/constants'
-import { LANGUAGE_OPTIONS } from '../utils/constants'
-import { selectLanguage } from '../utils/configSlice'
-import { lang } from '../utils/languageConstants'
+import { APP_LOGO } from '../../utils/configs/constants'
+import { LANGUAGE_OPTIONS } from '../../utils/configs/constants'
+import { selectLanguage } from '../../utils/store/configSlice'
+import { lang } from '../../utils/configs/languageConstants'
 
 const Header = () => {
     const dispath = useDispatch();

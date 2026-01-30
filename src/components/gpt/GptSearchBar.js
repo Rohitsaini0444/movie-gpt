@@ -1,9 +1,9 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { lang } from '../utils/languageConstants';
-import client from '../utils/gptConfig';
-import { DEFAULT_MOVIES_LIST, MOVIE_LIST_API_OPTIONS } from '../utils/constants';
-import { addGPTSearchResults } from '../utils/gptSearchSlice';
+import { lang } from '../../utils/configs/languageConstants';
+import client from '../../utils/helpers/gptConfig';
+import { DEFAULT_MOVIES_LIST, MOVIE_LIST_API_OPTIONS } from '../../utils/configs/constants';
+import { addGPTSearchResults } from '../../utils/store/gptSearchSlice';
 
 const GptSearchBar = () => {
     const config = useSelector((store) => store.config);

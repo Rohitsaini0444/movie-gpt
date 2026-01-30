@@ -1,12 +1,12 @@
 import { useState, useRef } from 'react'
-import Header from './Header'
-import validate from '../utils/validate';
-import { auth } from '../utils/firebase';
+import Header from '../common/Header'
+import validate from '../../utils/helpers/validate';
+import { auth } from '../../utils/configs/firebase';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useDispatch, useSelector } from 'react-redux';
-import { addUser } from '../utils/userSlice';
-import { AVATAR_URL, BROWSE_BACKGROUND_IMAGE_URL } from '../utils/constants';
-import { lang } from '../utils/languageConstants';
+import { addUser } from '../../utils/store/userSlice';
+import { AVATAR_URL, BROWSE_BACKGROUND_IMAGE_URL } from '../../utils/configs/constants';
+import { lang } from '../../utils/configs/languageConstants';
 
 const Login = () => {
     const [isSignedIn, setIsSignedIn] = useState(true);

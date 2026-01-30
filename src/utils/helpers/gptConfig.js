@@ -1,5 +1,5 @@
 import OpenAI from 'openai';
-import { GPT_API_KEY } from './constants';
+import { GPT_API_KEY } from '../configs/constants';
 
 const client = new OpenAI({
   apiKey: GPT_API_KEY, // This is the default and can be omitted
