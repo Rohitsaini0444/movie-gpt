@@ -11,7 +11,7 @@ const SecondryContainer = () => {
 
   return (
     <div className='w-screen  p-4  bg-black z-10'>
-      <div className='flex flex-col bg-transparent z-20 -mt-[300px]'>
+      <div className='flex flex-col bg-transparent z-20 md:-mt-[300px]'>
       <MoviesList title={'Now Playing Movies'} moviesList={nowPlayingMovies} />
       <MoviesList title={'Top Rated Movies'} moviesList={topRatedMovies} />
       <MoviesList title={'Popular Movies'} moviesList={popularMovies} />

@@ -64,12 +64,12 @@ const Login = () => {
     return (
         <div>
             <Header />
-            <div>
-                <img src={BROWSE_BACKGROUND_IMAGE_URL} alt='background-img' ></img>
+            <div className='h-screen bg-cover bg-center'>
+                <img src={BROWSE_BACKGROUND_IMAGE_URL} class="h-full w-full object-cover" alt='background-img' ></img>
             </div>
-            <div className='absolute top-1/2 w-full text-center'>
+            <div className='absolute top-[20%] md:top-1/3 w-full text-center'>
 
-                <form className='flex flex-col gap-4 w-1/4 mx-auto mt-10 p-10 bg-black/90 rounded'>
+                <form className='flex flex-col gap-4 md:w-1/4 mx-auto mt-10 p-10 bg-black/90 rounded'>
                     <span className='text-white text-3xl font-bold'>{isSignedIn ? lang[language].signin : lang[language].signUp}</span>
                     {!isSignedIn && <input ref={fullNameRef} type='text' placeholder={lang[language].fullNamePlaceholder} className='h-10 px-4 py-2 bg-gray-800 text-white rounded' />}
                     <input ref={emailRef} type='text' placeholder={lang[language].emailPlaceholder} className='h-10 px-4 py-2 bg-gray-800 text-white rounded' />

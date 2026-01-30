@@ -5,8 +5,7 @@ export const MOVIE_LIST_API_OPTIONS = {
     method: 'GET',
     headers: {
         accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1Y2FiNGJmOTc3ZWYyZjI4YWFjY2JkNDhiMjY4YjIyNSIsIm5iZiI6MTc2OTE1NjAzNS4zMDIsInN1YiI6IjY5NzMyZGMzOTJiYWIyNjFhN2UzZDZlOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6JAOupdjGwMfpy35FSzHTOvnY2Mj0sKVxg-FkqWn5sY'
-    }
+        Authorization: 'Bearer ' + process.env.REACT_APP_TMDB_API_KEY}
 };
 export const LANGUAGE_CONSTANTS = {
     EN: 'en',
@@ -21,4 +20,4 @@ export const LANGUAGE_OPTIONS = [
     { identifier: LANGUAGE_CONSTANTS.HIN, label: 'Hindi' }
 ];
 
-export const GPT_API_KEY = process.env.REACT_APP_OPENAI_KEY;
+export const GPT_API_KEY = process.env.REACT_APP_GPT_API_KEY;

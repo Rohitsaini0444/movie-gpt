@@ -48,7 +48,7 @@ const Header = () => {
     }
 
     return (
-        <div className='flex sticky top-0 justify-between w-screen px-8 py-2 bg-gradient-to-b bg-black from-black z-20'>
+        <div className='flex flex-col md:flex-row sticky top-0 items-center md:justify-between w-screen px-8 py-2 bg-gradient-to-b bg-black from-black z-20'>
             <img className='w-36' src={APP_LOGO} alt='app-logo'></img>
             <div className='flex h-full p-2 text-center align-middle justify-center'>
                 <select onChange={handleLanguageChange} value={config?.language} className='bg-black text-white border-white border-2 rounded-md px-2 mr-4'>
@@ -59,7 +59,7 @@ const Header = () => {
                 </select>
                 {user?.uid && <>
                     <button onClick={handleGPTSearch} className=' mr-2 px-2 bg-green-600 rounded font-bold text-white'>{gptSearchEnabled ? lang[config?.language].homePage : lang[config?.language].gptSearch}</button>
-                    <img className='w-7 h-7' src={user?.photoURL} alt='signOut' />
+                    <img className='w-7 h-7 hidden md:block' src={user?.photoURL} alt='signOut' />
                     <button onClick={handleSignOut} className='px-2 font-bold text-white'>{lang[config?.language].signOut}</button>
                 </>
                 }
