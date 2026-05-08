@@ -19,6 +19,7 @@ const usePopularMovies = () => {
 
     useEffect(() => {
        !popularMovies &&  getPopularMoviesList();
+    //    eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
 }
